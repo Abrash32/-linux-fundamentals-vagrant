@@ -16,11 +16,67 @@ Describe the structure you created
 ![alt text](Screenshot3.png)
 > Briefly explain the meaning of the permission and ownership values.
 #### Permission in linux is the consent to use a file or folder. thy're 3 set of people that can be granted permission or permission can be removed from they're.
- User: the person who created or owns the file. U </h4>
-<h4> Group: A set of users who might also have access. G </h4>
- <h4> Others: Other set of people that might be interested in using the file. O </h4>
- read -r
- write -w
- execute -x
- -rwxrwxrwx or drwxrwxrwx
-where the - represent that it's a file and 
+ ##### User: the person who created or owns the file. U 
+ ##### Group: A set of users who might also have access. G 
+ ##### Others: Other set of people that might be interested in using the file. O 
+ > the permissions are 
+- read -r  
+-  write -w
+- execute -x
+ > -rwxrwxrwx or drwxrwxrwx
+Where the `-` represents that it's a file and `d` represents that it's a directory.
+
+### The permissions are calculated like this:
+
+- Read = 4  
+- Write = 2  
+- Execute = 1  
+
+### Example: Give Full Permissions to Everyone
+
+```bash
+chmod 777 HelloWorld
+```
+
+> Linux uses an ownership model to control access to files and directories. Each file has:
+- **User (Owner)** – usually the person who created the file.
+- **Group** – a collection of users who share access rights.
+
+#### 🧪 Example
+When you run:
+```bash
+ls -l filename 
+-rw-r--r-- 1 rasheed devops 2048 Jun 22 14:00 example.txt
+```
+### Changing Ownership
+You can use chown to assign a new owner or group:
+- sudo chown newuser:newgroup filename
+## 4. 📦 Installing and Configuring a Package with apt in Linux
+
+In this section, I used the `apt` package manager to install a basic software package inside my Vagrant virtual machine running Ubuntu.
+
+### 🔧 Step-by-Step Process
+
+
+
+   sudo apt install curl ```
+   ### Verify the installation:
+   ```bash
+   curl --version
+```
+### Screenshot4: Show the package being installed and version confirmation.
+![alt text](Screenshot4.png)
+
+## 5. 🌐 Testing Remote Connectivity
+
+To verify that the virtual machine can communicate with an external server, I used the `ping` command.
+
+### 🔧 Command Used
+
+```bash
+ping -c 4 google.com
+```
+### screenshot5: Show the ping result.
+ Mention what the output shows and why it’s useful.
+![alt text](Screenshot5.png)
+> The output confirms successful communication between my VM and Google's server. All 4 packets were sent and received with 0% packet loss, which means there is no network issue. The time values show round-trip latency in milliseconds, which helps measure connection speed and quality. This is useful for verifying that internet connectivity is working properly inside the virtual machine.
